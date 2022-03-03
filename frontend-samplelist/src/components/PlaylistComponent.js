@@ -26,7 +26,34 @@ class PlaylistComponent extends React.Component {
     console.log("playlistComponent state", this.state)
     return (
       <div>
+        <h1 className="text-center"> Playlist </h1>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <td>Title</td>
+              <td>Artist</td>
+              <td>Description</td>
+              <td>Likes/Dislikes</td>
+              <td>Play/Pause</td>
+            </tr>
 
+          </thead>
+          <tbody>
+            {
+              this.state.currentMusicList.map(
+                music =>
+                  <tr key={music.name}>
+                    <td> {music.title} </td>
+                    <td> {music.name} </td>
+                    <td> {music.description} </td>
+                    <td> {music.likes}/{music.dislikes} </td>
+                    <td> null </td>
+                  </tr>
+              )
+            }
+          </tbody>
+
+        </table>
       </div>
     )
   }
